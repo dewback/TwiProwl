@@ -1,4 +1,4 @@
-LogDir: /home/gonbe/var/log
+LogDir: /tmp
 Debug: false
 Daemon: true
 
@@ -8,19 +8,44 @@ Prowl:
 
 Accounts:
  -
-  Application: "Gonbe's Twitter"
-  User: gonbe
-  Pass: himitsu
-  MentionsCount: 10
-  MentionsInterval: 300
-  MentionsPriority: 1
-  DirectCount: 10
-  DirectInterval: 600
-  DirectPriority: 0
-  RetweetsCount: 10
-  RetweetsInterval: 300
-  RetweetsPriority: 1
+  Application: "Twitter"
+  User: example_username
   RateLimitThreshold: 20
-  UseProxy: false
-  RemotterInterval: 1800
-  RemotterPriority: 0
+  UseProxy: false          # <= use Prowl::ProxyURL
+  Mentions:                # Event on Mentions
+    Enable: true
+    Priority: 1
+    IgnoreSelf: true       # Ignore mention by myself
+  Direct:                  # Event on Direct Messages
+    Enable: true
+    Priority: 0
+    IgnoreSelf: true       # Ignore DM event from myself
+  Retweets:                # Event on Retweets
+    Enable: true
+    Priority: 0
+  Membership:              # Event on List Membership
+    Enable: true
+    Priority: 0
+    IgnoreSelf: true       # Ignore event by myself
+    IgnoreNegative: false  # Ignore remove event
+  Favorite:                # Event on Favorite/Unfavorite
+    Enable: true
+    Priority: 0
+    IgnoreSelf: true       # Ignore event by myself
+    IgnoreNegative: false  # Ignore Unfavorite event
+  Unfollowed:              # Event on Unfollowed, requiresi API rate
+    Enable: true
+    Priority: 0
+    Interval: 1800
+  RegexpMatch:
+    -
+      User: "eew_jp"
+      Priority: 2
+      Enable: true
+    -
+      Text: "TwiProwl"
+      Priority: 0
+      Enable: true
+    -
+      User: "^northeye$"
+      Text: "TwiProwl|twiprowl"

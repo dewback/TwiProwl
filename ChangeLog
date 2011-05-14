@@ -1,4 +1,61 @@
-=======
+2011-04-20  Takuo Kitame  <kitame@debian.org>
+
+	* 1.5.0
+	* Adedd RegexpMatch notification.
+
+2011-02-22  Takuo Kitame  <kitame@debian.org>
+
+	* remove unncessary Net::HTTP hack
+
+2010-09-29  Takuo Kitame  <kitame@debian.org>
+
+	* 1.4.0
+	* use Released Version of Streaming API.
+	* Remove all check methods using normal API except 'Unfollowed'
+
+2010-09-14  Takuo Kitame  <kitame@debian.org>
+
+	* 1.3.0
+	* use Streaming API to check DirectMessage.
+
+2010-09-12  Takuo Kitame  <kitame@debian.org>
+
+	* 1.2.0
+	* Added ability to disable notification for event which occuered by myself. (Default: true)
+	* Added ability to disable notification for negative event of Membership or Favorite. (Default: false)
+
+2010-09-06  Takuo Kitame  <kitame@debian.org>
+
+	* 1.1.0
+	* overhall refactoring.
+	* remove local oauth library.
+	* [WARNING] config.yml format was changed.
+	see README and sample config.yaml
+
+2010-09-02  Takuo Kitame  <kitame@debian.org>
+
+	* 1.0.1
+	* [Streaming] Fix incorrect prowl trigger for ListMembership event.
+	* [Streaming] Increase recconect delay by error count.
+	* Fix kill process issue.
+	* #!/usr/bin/env ruby
+	* use external oauth library if possible.
+
+2010-09-01  Takuo Kitame  <kitame@debian.org>
+
+	* 1.0.0
+	* Mentions, Retweets and Membership are can be checked with Streaming API.
+
+2010-08-06  Takuo Kitame  <kitame@debian.org>
+
+	* 0.9.0
+	* rewrite thread structure, shout be robust more..
+
+2010-07-21  Takuo Kitame  <kitame@debian.org>
+
+	* 0.8.0
+	* added notification for List Membership
+
 2010-06-30  Takuo Kitame  <kitame@debian.org>
 
 	* 0.7.1
